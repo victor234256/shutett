@@ -1,0 +1,27 @@
+{
+     "router"([
+        {
+           [
+            {
+              path: "/",
+              element: <IndexPage />,
+            },
+            {
+              path: "/authenticate",
+              element: <Authenticate />,
+            },
+            {
+              path: "/homePage",
+              element: (
+                <TrackAuthentication>
+                  <HomePage />
+                </TrackAuthentication>
+              ),
+            },
+            {
+              path: "/:id",
+              element: <Redirect />,
+            },
+          ],
+        },
+      ]);
