@@ -1,6 +1,6 @@
 import { UrlState } from "@/context";
 import { useEffect, useRef, useState } from "react";
-import { useSearchParams } from "react-router-dom";
+import { useNavigate, useSearchParams } from "react-router-dom";
 import {
   Dialog,
   DialogContent,
@@ -22,6 +22,7 @@ import { Button } from "./ui/button";
 export default function CreateLink() {
   const { user } = UrlState();
   const ref = useRef();
+  const navigate = useNavigate();
   let [searchParams, setSearchParams] = useSearchParams();
   const longLink = searchParams.get("createNew");
 
@@ -58,7 +59,7 @@ export default function CreateLink() {
     if (error === null && data) {
       window.location.reload();
     }
-  }, [error, data]);
+  }, [error, data, navigate]);
 
   const createNewLink = async () => {
     setErrors({});
