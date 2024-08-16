@@ -52,7 +52,7 @@ const Linkcard = ({ url = [], fetchURL }) => {
       <span className="flex flex-col gap-2 flex-1">
         <span className="text-2xl hover:underline font-bold">{url?.title}</span>
         <span className="dark:text-blue-200 font-extrabold text-2xl cursor-pointer hover:underline text-blue-400">
-          https://shuett/
+          https://shuett.vercel.app/
           {url?.custom_url ? url?.custom_url : url.short_url}
         </span>
         <span className="flex gap-1 text-2xl hover:underline items-center">
