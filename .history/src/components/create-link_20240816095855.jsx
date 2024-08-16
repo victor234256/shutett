@@ -57,7 +57,7 @@ export default function CreateLink() {
 
   useEffect(() => {
     if (error === null && data) {
-      navigate("/homePage");
+      navigate("/https://shutett.vercel.app/homePage");
       window.location.reload();
     }
   }, [error, data, navigate]);
