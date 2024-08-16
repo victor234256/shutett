@@ -118,7 +118,7 @@ export default function CreateLink() {
         />
         {errors.longUrl && <ErrorMessage message={errors.longUrl} />}
         <div className="flex items-center gap-2">
-          <Card className="p-2">shutett.vercel.app</Card> /
+          <Card className="p-2">shutett</Card> /
           <Input
             id="customUrl"
             placeholder="Custom Link (Optional)"
