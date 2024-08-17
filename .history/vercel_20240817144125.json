@@ -9,6 +9,15 @@
     {
       "src": "/:id",
       "dest": "/redirectLinks"
+    },
+
+    {
+      "src": "/authenticate",
+      "dest": "/"
+    },
+    {
+      "src": "/:id",
+      "dest": "/"
     }
   ]
 }
