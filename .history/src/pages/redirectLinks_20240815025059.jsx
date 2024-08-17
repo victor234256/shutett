@@ -1,30 +1,28 @@
-import { useEffect } from "react";
-import { useParams } from "react-router-dom";
-import { BarLoader } from "react-spinners";
 import { clicksStoring } from "@/db/clicksAPI";
 import { getLongUrl } from "@/db/urlAPI";
 import useFetch from "@/useHooks/fetch";
+import { useEffect } from "react";
+import { useParams } from "react-router-dom";
+import { BarLoader } from "react-spinners";
 
 const Redirect = () => {
   const { id } = useParams();
   const { loading, data, fn } = useFetch(getLongUrl, id);
 
-  const { loading: statsLoader, fn: statsFunction } = useFetch(clicksStoring, {
+  const { loading: statsLoader, fn: statsFuction } = useFetch(clicksStoring, {
     id: data?.id,
     originalUrl: data?.original_url,
   });
 
   useEffect(() => {
     fn();
-  }, [fn]);
+  }, []);
 
   useEffect(() => {
     if (!loading && data) {
-      statsFunction();
-      // Redirect after the data is fetched and statistics are recorded
-      window.location.href = data.original_url;
+      statsFuction();
     }
-  }, [loading, data, statsFunction]);
+  }, [loading]);
 
   if (loading || statsLoader) {
     return (
@@ -35,7 +33,6 @@ const Redirect = () => {
       </>
     );
   }
-
   return null;
 };
 
