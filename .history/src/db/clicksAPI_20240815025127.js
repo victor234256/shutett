@@ -1,6 +1,5 @@
 import { UAParser } from "ua-parser-js";
 import supabase from "./supabase";
-import { Navigate } from "react-router-dom";
 
 export async function getClicksFromURL(urlIds) {
   const { data, error } = await supabase
@@ -40,8 +39,7 @@ export const clicksStoring = async ({ id, originalUrl }) => {
 
     // Redirect user to the original URL
 
-    // window.location.href = originalUrl;
-    Navigate(originalUrl);
+    window.location.href = originalUrl;
     // console.log(originalUrl);
   } catch (error) {
     console.error("Error storing click data: ", error);
