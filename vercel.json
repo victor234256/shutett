@@ -26,11 +26,6 @@
     {
       "src": "/",
       "dest": "/:id"
-    },
-
-    {
-      "src": "/:shorturl",
-      "dest": "/api/redirectLinks?shorturl=:shorturl"
     }
   ]
 }
