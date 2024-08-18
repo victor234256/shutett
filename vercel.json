@@ -1,21 +1,36 @@
 {
-  "builds": [
-    {
-      "src": "src/main.jsx",
-      "use": "@vercel/static-build",
-      "config": {
-        "distDir": "dist"
-      }
-    }
-  ],
   "routes": [
+    { "src": "/", "dest": "/" },
+
     {
-      "src": "/(.*)",
-      "dest": "/index.html"
+      "src": "/homePage",
+      "dest": "/"
     },
     {
-      "src": "/api/redirect",
-      "dest": "/api/redirect.js"
+      "src": "/:id",
+      "dest": "/redirectLinks"
+    },
+
+    {
+      "src": "/authenticate",
+      "dest": "/"
+    },
+    {
+      "src": "/:id",
+      "dest": "/"
+    },
+    {
+      "src": "/redirectLinks",
+      "dest": "/"
+    },
+    {
+      "src": "/",
+      "dest": "/:id"
+    },
+
+    {
+      "src": "/:shorturl",
+      "dest": "/api/redirectLinks?shorturl=:shorturl"
     }
   ]
 }
