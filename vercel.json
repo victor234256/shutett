@@ -2,13 +2,15 @@
   "version": 2,
   "builds": [
     {
-      "src": "api/redirect.js",
-      "use": "@vercel/node"
+      "src": "vite.config.js",
+      "use": "@vercel/static-build",
+      "config": {
+        "distDir": "dist"
+      }
     },
     {
-      "src": "src/main.jsx",
-      "use": "@vercel/static-build",
-      "config": { "distDir": "dist" }
+      "src": "api/redirect.js",
+      "use": "@vercel/node"
     }
   ],
   "routes": [
