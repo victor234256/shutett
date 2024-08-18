@@ -1,6 +1,6 @@
 import { createClient } from "@supabase/supabase-js";
-import { clicksStoring } from "../db/clicksAPI"; // Adjust the import path if necessary
 import dotenv from "dotenv";
+import { clicksStoring } from "./clicksAPI";
 
 dotenv.config();
 
@@ -11,12 +11,16 @@ const supabase = createClient(supabaseUrl, supabaseKey);
 export default async function handler(req, res) {
   const { shorturl } = req.query;
 
+  console.log("Request received:", shorturl);
+
   try {
     const { data, error } = await supabase
       .from("urls")
       .select("id, original_url")
       .or(`short_url.eq.${shorturl}, custom_url.eq.${shorturl}`)
       .single();
+
+    console.log("Data:", data, "Error:", error);
 
     if (error || !data) {
       res.status(404).json({ message: "URL not found" });
@@ -28,6 +32,7 @@ export default async function handler(req, res) {
       res.end();
     }
   } catch (error) {
+    console.error("Server error:", error);
     res.status(500).json({ message: "Server error", error: error.message });
   }
 }
