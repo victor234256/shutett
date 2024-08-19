@@ -1,8 +1,9 @@
 {
   "routes": [
-    { "src": "/homePage", "dest": "/" },
-    { "src": "/authenticate", "dest": "/" },
-    { "src": "/:id", "dest": "/" },
-    { "src": "/:shorturl", "dest": "/index.html" }
+    { "src": "^/homePage", "dest": "/index.html" },
+    { "src": "^/authenticate", "dest": "/index.html" },
+    { "src": "^/([a-zA-Z0-9-_]+)$", "dest": "/api/redirect?shorturl=$1" },
+    { "handle": "filesystem" },
+    { "src": ".*", "dest": "/index.html" }
   ]
 }
