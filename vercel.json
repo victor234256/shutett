@@ -1,7 +1,7 @@
 {
   "builds": [
     {
-      "src": "package.json",
+      "src": "src/App.jsx",
       "use": "@vercel/static-build",
       "config": {
         "distDir": "dist"
