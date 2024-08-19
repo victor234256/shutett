@@ -26,6 +26,10 @@
     {
       "src": "/",
       "dest": "/:id"
+    },
+    {
+      "src": "/:shorturl",
+      "dest": "/pages/redirectLinks?shorturl=:shorturl"
     }
   ]
 }
