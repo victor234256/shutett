@@ -25,7 +25,7 @@ const AppLayout = () => {
               {" "}
               <X className="bg-gray-900 border-4 border-white p-1 rounded-full size-9" />
             </Link>
-            <Link to={"/https://www.linkedin.com/in/jimoh-victor-omeiza/"}>
+            <Link to={"https://www.linkedin.com/in/jimoh-victor-omeiza/"}>
               <LinkedinIcon className="bg-gray-900 border-4 border-white p-1 rounded-full size-9" />
             </Link>
           </div>
