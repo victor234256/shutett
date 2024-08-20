@@ -92,7 +92,11 @@ const Signup = () => {
       <Card>
         <CardHeader>
           <CardTitle>Create A New Account</CardTitle>
-          <CardDescription>A new user</CardDescription>
+          <CardDescription>
+            Welcome to{" "}
+            <b className="text-gray-900 dark:text-red-600"> Shutett</b> Please
+            create an account to keep track of your links
+          </CardDescription>
           {error && <ErrorMessage message={error.message} />}
         </CardHeader>
         <CardContent className="space-y-2">
